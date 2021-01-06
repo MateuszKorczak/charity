@@ -5,17 +5,21 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "categories")
-public class Category {
+@Table(name = "institutions")
+public class Institution {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotBlank
-    @Column(nullable = false, unique = true)
-    @Size(min = 3, max = 20)
+    @Size(min = 3, max = 50)
+    @Column(nullable = false, unique = true, length = 50)
     private String name;
+
+    @NotBlank
+    @Column(nullable = false)
+    private String description;
 
     /* getters and setters */
 
@@ -33,5 +37,13 @@ public class Category {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

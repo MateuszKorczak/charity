@@ -16,23 +16,23 @@ public class Donation {
 
     private Integer quantity;
 
-    @OneToMany
-    @JoinColumn(name = "id_donation")
+    @ManyToMany
+    @JoinTable(name = "donation_categories", joinColumns = @JoinColumn(name = "donation_id"), inverseJoinColumns = @JoinColumn(name = "category_id"))
     private List<Category> categoryList = new ArrayList<>();
 
-   @OneToMany
-    @JoinColumn(name = "id_institution")
+    @ManyToOne
+    @JoinColumn(name = "institution_id")
     private Institution institution;
 
-   private String street;
+    private String street;
 
-   private String city;
+    private String city;
 
-   private String zipCode;
+    private String zipCode;
 
-   private LocalDate pickUpDate;
+    private LocalDate pickUpDate;
 
-   private LocalTime pickUpTime;
+    private LocalTime pickUpTime;
 
     private String pickUpComment;
 
