@@ -32,6 +32,7 @@ public class HomeController {
         List<Institution> institutions = institutionRepository.findAll();
         model.addAttribute("institutions", institutions);
         model.addAttribute("donationsAmount", donationService.quantityOfAllDonations());
+        model.addAttribute("allBagsAmount", donationService.allBagsAmount());
         return "index";
     }
 

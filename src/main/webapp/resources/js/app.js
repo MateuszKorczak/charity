@@ -171,7 +171,9 @@ document.addEventListener("DOMContentLoaded", function() {
   if (form !== null) {
     new FormSteps(form);
   }
-/*  /!**
+/*
+DOKOŃCZ paginację instytucji.
+/!**
   * Institution list pagination
   * *!/
   const next = document.getElementById("next-step");
