@@ -36,6 +36,23 @@ public class Donation {
 
     private String pickUpComment;
 
+    /* constructor */
+
+    public Donation() {
+    }
+
+    public Donation(Integer quantity, List<Category> categoryList, Institution institution, String street, String city, String zipCode, LocalDate pickUpDate, LocalTime pickUpTime, String pickUpComment) {
+        this.quantity = quantity;
+        this.categoryList = categoryList;
+        this.institution = institution;
+        this.street = street;
+        this.city = city;
+        this.zipCode = zipCode;
+        this.pickUpDate = pickUpDate;
+        this.pickUpTime = pickUpTime;
+        this.pickUpComment = pickUpComment;
+    }
+
     /* getters and setters */
 
     public Long getId() {

@@ -3,6 +3,7 @@ package pl.coderslab.charity.entity;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.util.Objects;
 
 @Entity
 @Table(name = "institutions")
@@ -20,6 +21,15 @@ public class Institution {
     @NotBlank
     @Column(nullable = false)
     private String description;
+
+    /* constructor */
+
+    public Institution() {
+    }
+
+    public Institution(@NotBlank(message = "Name of institution is mandatory") @Size(max = 300) String name) {
+        this.name = name;
+    }
 
     /* getters and setters */
 
@@ -46,4 +56,23 @@ public class Institution {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Institution)) return false;
+        Institution that = (Institution) o;
+        return getName().equals(that.getName());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName());
+    }
 }
+
+
+
+
+
+
