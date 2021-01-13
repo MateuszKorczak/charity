@@ -99,58 +99,42 @@
                 </div>
             </div>
 
-
             <!-- STEP 5 -->
-            <div data-step="5">
-                <h3>Podsumowanie Twojej darowizny</h3>
-
+            <div data-step="5"><h3>Podsumowanie Twojej darowizny</h3>
                 <div class="summary">
-                    <div class="form-section">
-                        <h4>Oddajesz:</h4>
+                    <div class="form-section"><h4>Oddajesz:</h4>
                         <ul>
-                            <li>
-                                <span class="icon icon-bag"></span>
-                                <span class="summary--text"
-                                >4 worki ubrań w dobrym stanie dla dzieci</span
-                                >
-                            </li>
-
-                            <li>
-                                <span class="icon icon-hand"></span>
-                                <span class="summary--text"
-                                >Dla fundacji "Mam marzenie" w Warszawie</span
-                                >
+                            <li><span class="summary--text" id="summaryQuantity"></span> <span
+                                    class="icon icon-bag"></span> <span class="summary--text"
+                                                                        id="summaryCategories"></span></li>
+                            <li> Dla fundacji: <span class="icon icon-hand"></span> <span class="summary--text"
+                                                                                          id="summaryInstitution"></span>
                             </li>
                         </ul>
                     </div>
-
                     <div class="form-section form-section--columns">
-                        <div class="form-section--column">
-                            <h4>Adres odbioru:</h4>
+                        <div class="form-section--column"><h4>Adres odbioru:</h4>
                             <ul>
-                                <li>Prosta 51</li>
-                                <li>Warszawa</li>
-                                <li>99-098</li>
-                                <li>123 456 789</li>
+                                <li id="summaryStreet"></li>
+                                <li id="summaryCity"></li>
+                                <li id="summaryZipCode"></li>
                             </ul>
                         </div>
-
-                        <div class="form-section--column">
-                            <h4>Termin odbioru:</h4>
+                        <div class="form-section--column"><h4>Termin odbioru:</h4>
                             <ul>
-                                <li>13/12/2018</li>
-                                <li>15:40</li>
-                                <li>Brak uwag</li>
+                                <li id="summaryPickUpDate"></li>
+                                <li id="summaryPickUpTime"></li>
+                                <li id="summaryPickUpComment"></li>
                             </ul>
                         </div>
                     </div>
                 </div>
-
                 <div class="form-group form-group--buttons">
                     <button type="button" class="btn prev-step">Wstecz</button>
                     <button type="submit" class="btn">Potwierdzam</button>
                 </div>
             </div>
+
 
         </form:form>
     </div>
