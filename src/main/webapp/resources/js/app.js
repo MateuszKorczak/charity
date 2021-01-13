@@ -171,32 +171,5 @@ document.addEventListener("DOMContentLoaded", function() {
   if (form !== null) {
     new FormSteps(form);
   }
-/*
-DOKOŃCZ paginację instytucji.
-/!**
-  * Institution list pagination
-  * *!/
-  const next = document.getElementById("next-step");
-  const prev = document.getElementById("prev-step");
-  const institutionList = document.querySelectorAll("li");
-  let count = 0;
-
-  institutionList[count].classList.add("visible")
-
-  next.addEventListener("click", ev => {
-
-    institutionList[count++].classList.remove("visible");
-    if (count >= gallery.length) {
-      count = 0;
-    }
-    institutionList[count].classList.add("visible");
-  });
-  prev.addEventListener("click", ev => {
-    institutionList[count--].classList.remove("visible");
-    if (count <= 0) {
-      count = gallery.length-1;
-    }
-    institutionList[count].classList.add("visible");
-  });*/
 
 });

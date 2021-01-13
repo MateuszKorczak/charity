@@ -16,13 +16,11 @@ import java.util.List;
 public class HomeController {
 
     private final CategoryRepository categoryRepository;
-    private final DonationRepository donationRepository;
     private final InstitutionRepository institutionRepository;
     private final DonationService donationService;
 
     public HomeController(CategoryRepository categoryRepository, DonationRepository donationRepository, InstitutionRepository institutionRepository, DonationService donationService) {
         this.categoryRepository = categoryRepository;
-        this.donationRepository = donationRepository;
         this.institutionRepository = institutionRepository;
         this.donationService = donationService;
     }
