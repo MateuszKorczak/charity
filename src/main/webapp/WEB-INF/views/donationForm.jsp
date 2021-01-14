@@ -104,11 +104,11 @@
                 <div class="summary">
                     <div class="form-section"><h4>Oddajesz:</h4>
                         <ul>
-                            <li><span class="summary--text" id="summaryQuantity"></span> <span
-                                    class="icon icon-bag"></span> <span class="summary--text"
-                                                                        id="summaryCategories"></span></li>
-                            <li> Dla fundacji: <span class="icon icon-hand"></span> <span class="summary--text"
-                                                                                          id="summaryInstitution"></span>
+                            <li><span class="summary--text" id="summaryQuantity"></span>
+                                <span class="icon icon-bag"></span>
+                                <span class="summary--text" id="summaryCategories"></span></li>
+                            <li> Dla <span class="icon icon-hand"></span>
+                                <span class="summary--text" id="summaryInstitution"></span>
                             </li>
                         </ul>
                     </div>

@@ -166,21 +166,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // TODO: get data from inputs and show them in summary
 
-            form.querySelector("#summaryInstitution").innerText =
-                form.querySelector("[name=institution]:checked").parentElement
-                    .querySelector("div.title").innerText;
+            form.querySelector("#summaryInstitution").innerText = +" " +
+                form.querySelector("[name=institution]:checked").parentElement.querySelector("div.title").innerText;
 
-            form.querySelector("#summaryQuantity").innerText = "Ilość worków: "
-                + form.querySelector("#quantity").value;
+            form.querySelector("#summaryQuantity").innerText = form.querySelector("#quantity").value;
             form.querySelector("#summaryStreet").innerText = form.querySelector("#street").value;
             form.querySelector("#summaryCity").innerText = form.querySelector("#city").value;
             form.querySelector("#summaryZipCode").innerText = form.querySelector("#zipCode").value;
-            form.querySelector("#summaryPickUpDate").innerText =
-                form.querySelector("#pickUpDate").value;
-            form.querySelector("#summaryPickUpTime").innerText =
-                form.querySelector("#pickUpTime").value;
-            form.querySelector("#summaryPickUpComment").innerText =
-                form.querySelector("#pickUpComment").value;
+            form.querySelector("#summaryPickUpDate").innerText = form.querySelector("#pickUpDate").value;
+            form.querySelector("#summaryPickUpTime").innerText = form.querySelector("#pickUpTime").value;
+            form.querySelector("#summaryPickUpComment").innerText = form.querySelector("#pickUpComment").value;
 
         }
 

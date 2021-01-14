@@ -1,4 +1,4 @@
-package pl.coderslab.charity.services.implementations;
+package pl.coderslab.charity.services.imple;
 
 import org.springframework.stereotype.Service;
 import pl.coderslab.charity.entity.Donation;
