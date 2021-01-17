@@ -34,6 +34,8 @@
                     <div class="form-group form-group--checkbox"><label>
                         <form:checkbox path="categoryList" value="${category.id}"/> <span
                             class="checkbox"></span> <span class="description">${category.name}</span> </label></div>
+                    <%--                     czy wymagany i działa --%>
+                    <form:errors path="categoryList" cssClass="error"/>
                 </c:forEach>
                 <div class="form-group form-group--buttons">
                     <button type="button" class="btn next-step">Dalej</button>
@@ -45,6 +47,7 @@
                 <h3>Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</h3>
                 <div class="form-group form-group--inline"><form:label path="quantity"> </form:label>
                     <form:input type="number" min="1" path="quantity"/>
+                    <form:errors path="quantity" cssClass="error"/>
                 </div>
                 <div class="form-group form-group--buttons">
                     <button type="button" class="btn prev-step">Wstecz</button>
@@ -77,11 +80,15 @@
                 <div class="form-section form-section--columns">
                     <div class="form-section--column"><h4>Adres odbioru</h4>
                         <div class="form-group form-group--inline"><form:label
-                                path="street">Ulica i numer domu</form:label> <form:input path="street"/></div>
+                                path="street">Ulica i numer domu</form:label>
+                            <form:input path="street"/></div>
+                        <form:errors path="street" cssClass="error"/>
                         <div class="form-group form-group--inline"><form:label path="city">Miasto</form:label>
                             <form:input path="city"/></div>
+                        <form:errors path="city" cssClass="error"/>
                         <div class="form-group form-group--inline"><form:label path="zipCode">Kod pocztowy</form:label>
                             <form:input path="zipCode"/></div>
+                        <form:errors path="zipCode" cssClass="error"/>
                     </div>
                     <div class="form-section--column"><h4>Termin odbioru</h4>
                         <div class="form-group form-group--inline"><form:label path="pickUpDate">Data</form:label>

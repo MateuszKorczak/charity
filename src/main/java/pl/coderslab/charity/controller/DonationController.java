@@ -14,7 +14,6 @@ import javax.validation.Valid;
 
 
 @Controller
-//@RequestMapping("/donation")
 public class DonationController {
 
     private final InstitutionService institutionService;
@@ -36,17 +35,15 @@ public class DonationController {
     }
 
     @PostMapping("/form")
-    public String proceedForm(@Valid Donation donation, BindingResult bindingResult) {
+    public String proceedForm(@Valid Donation donation, BindingResult result) {
 //        napisz validację przed zapisaniem do bazy
 // sprawdź instytucje/ kategorie
-        if (!bindingResult.hasErrors()){
+
+        if (!result.hasErrors()) {
             donationService.saveDonation(donation);
-
+            return "donationForm-conf";
         }
-//
-
-        return "donationForm-conf";
-
+        return "donationForm";
     }
 
 

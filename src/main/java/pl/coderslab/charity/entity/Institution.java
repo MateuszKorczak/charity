@@ -13,7 +13,7 @@ public class Institution {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
+    @NotBlank(message = "Institution name is required")
     @Size(min = 3, max = 50)
     @Column(nullable = false, unique = true, length = 50)
     private String name;
@@ -27,10 +27,9 @@ public class Institution {
     public Institution() {
     }
 
-    public Institution(@NotBlank(message = "Name of institution is mandatory") @Size(max = 300) String name) {
+    public Institution(@NotBlank(message = "Institution name is required") @Size(min = 3, max = 50) String name) {
         this.name = name;
     }
-
     /* getters and setters */
 
     public Long getId() {

@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="head.jsp" %>
 
@@ -23,7 +24,6 @@
         </ul>
     </nav>
 
-<%--    dodaj if (jeśli poprawnie podziękowanie) w irazie błędów listę błędów.--%>
     <div class="slogan container container--90">
         <h2>
             Dziękujemy za przesłanie formularza Na maila prześlemy wszelkie
@@ -32,6 +32,21 @@
     </div>
 
 
+    <%--    <c:choose>--%>
+    <%--        <c:when test="${e=null}">--%>
+    <%--            <div class="slogan container container--90">--%>
+    <%--                <h2>--%>
+    <%--                    Dziękujemy za przesłanie formularza Na maila prześlemy wszelkie--%>
+    <%--                    informacje o odbiorze.--%>
+    <%--                </h2>--%>
+    <%--            </div>--%>
+    <%--            <br/>--%>
+    <%--        </c:when>--%>
+    <%--        <c:otherwise>--%>
+    <%--            <form:errors path="*"/>--%>
+    <%--            <br/>--%>
+    <%--        </c:otherwise>--%>
+    <%--    </c:choose>--%>
 
 </header>
 <%@include file="footer.jsp" %>

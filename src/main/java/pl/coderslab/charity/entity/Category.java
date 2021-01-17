@@ -13,7 +13,7 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
+    @NotBlank(message = "Category name is required")
     @Column(nullable = false, unique = true)
     @Size(min = 3, max = 20)
     private String name;
@@ -23,10 +23,9 @@ public class Category {
     public Category() {
     }
 
-    public Category(@NotBlank @Size(min = 3, max = 20) String name) {
+    public Category(@NotBlank(message = "Category name is required") @Size(min = 3, max = 20) String name) {
         this.name = name;
     }
-
     /* getters and setters */
 
     public Long getId() {

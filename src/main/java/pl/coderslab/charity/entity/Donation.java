@@ -4,6 +4,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -18,7 +19,7 @@ public class Donation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Min(1)
+    @Min(value = 1, message = "Minimum quantity is 1.")
     private Integer quantity;
 
     @ManyToMany
@@ -29,17 +30,20 @@ public class Donation {
     @JoinColumn(name = "institution_id")
     private Institution institution;
 
+    @Pattern(regexp = "([św\\.\\s]*[A-ZŻŹĆĄŚĘŁÓŃ]*[a-zżźćńółęąś\\s-]+([IXV\\s]+)*){1,3}\\d+[a-gA-G]?", message = "Add Street and Number")
+    @NotBlank(message = "Street name is required")
     private String street;
 
+    @NotBlank(message = "City name is required")
+    @Pattern(regexp = "([A-ZŻŹĆĄŚĘŁÓŃ]*[a-zżźćńółęąś\\s-]+){1,2}", message = "Add City")
     private String city;
 
-    @Pattern(regexp = "\\d{2}-\\d{3}")
+    @Pattern(regexp = "\\d{2}-\\d{3}", message = "Add zipCode in format 11-111")
     private String zipCode;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate pickUpDate;
 
-    //    @DateTimeFormat(pattern = "HH:mm:ss") - sprawdź czy działa bez.
     private LocalTime pickUpTime;
 
     private String pickUpComment;
@@ -49,7 +53,7 @@ public class Donation {
     public Donation() {
     }
 
-    public Donation(Integer quantity, List<Category> categoryList, Institution institution, String street, String city, String zipCode, LocalDate pickUpDate, LocalTime pickUpTime, String pickUpComment) {
+    public Donation(@Min(value = 1, message = "Minimum quantity is 1.") Integer quantity, List<Category> categoryList, Institution institution, @Pattern(regexp = "([św\\.\\s]*[A-ZŻŹĆĄŚĘŁÓŃ]*[a-zżźćńółęąś\\s-]+([IXV\\s]+)*){1,3}\\d+[a-gA-G]?", message = "Add Street and Number") @NotBlank(message = "Street name is required") String street, @NotBlank(message = "City name is required") @Pattern(regexp = "([A-ZŻŹĆĄŚĘŁÓŃ]*[a-zżźćńółęąś\\s-]+){1,2}", message = "Add City") String city, @Pattern(regexp = "\\d{2}-\\d{3}", message = "Add zipCode in format 11-111") String zipCode, @NotBlank(message = "Pick Up Date name is required") LocalDate pickUpDate, @NotBlank(message = "Pick Up Time name is required") LocalTime pickUpTime, String pickUpComment) {
         this.quantity = quantity;
         this.categoryList = categoryList;
         this.institution = institution;

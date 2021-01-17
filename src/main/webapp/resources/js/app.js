@@ -165,28 +165,28 @@ document.addEventListener("DOMContentLoaded", function () {
             this.$step.parentElement.hidden = this.currentStep >= 5;
 
             // TODO: get data from inputs and show them in summary
+            if (this.currentStep === 5) {
 
-            form.querySelector("#summaryInstitution").innerText =
-                form.querySelector("[name=institution]:checked").parentElement.querySelector("div.title").innerText;
 
-            // dodaj pustą listę, dodaj zaznaczone kategorie,(parent element, jego descrpiton) wyświetli listę.
-            const categoryList = form.querySelectorAll("[name=categoryList]:checked.parentElement.description");
+                form.querySelector("#summaryInstitution").innerText =
+                    form.querySelector("[name=institution]:checked").parentElement.querySelector("div.title").innerText;
 
-            let checkedCategories = [];
-            categoryList.forEach(categoryList => {
-                checkedCategories.push(categoryList.innerText);
-            });
-            form.querySelector("#summaryCategories").innerText = "w których są: " + checkedCategories.join(", ");
-            form.querySelector("#summaryQuantity").innerText = form.querySelector("#quantity").value;
-            form.querySelector("#summaryStreet").innerText = form.querySelector("#street").value;
-            form.querySelector("#summaryCity").innerText = form.querySelector("#city").value;
-            form.querySelector("#summaryZipCode").innerText = form.querySelector("#zipCode").value;
-            form.querySelector("#summaryPickUpDate").innerText = form.querySelector("#pickUpDate").value;
-            form.querySelector("#summaryPickUpTime").innerText = form.querySelector("#pickUpTime").value;
-            form.querySelector("#summaryPickUpComment").innerText = form.querySelector("#pickUpComment").value;
+                const categoryList = form.querySelectorAll("[name=categoryList]:checked.parentElement.description");
 
+                let checkedCategories = [];
+                categoryList.forEach(categoryList => {
+                    checkedCategories.push(categoryList.innerText);
+                });
+                form.querySelector("#summaryCategories").innerText = "w których są: " + checkedCategories.join(", ");
+                form.querySelector("#summaryQuantity").innerText = form.querySelector("#quantity").value;
+                form.querySelector("#summaryStreet").innerText = form.querySelector("#street").value;
+                form.querySelector("#summaryCity").innerText = form.querySelector("#city").value;
+                form.querySelector("#summaryZipCode").innerText = form.querySelector("#zipCode").value;
+                form.querySelector("#summaryPickUpDate").innerText = form.querySelector("#pickUpDate").value;
+                form.querySelector("#summaryPickUpTime").innerText = form.querySelector("#pickUpTime").value;
+                form.querySelector("#summaryPickUpComment").innerText = form.querySelector("#pickUpComment").value;
+            }
         }
-
     }
 
     const form = document.querySelector(".form--steps");
