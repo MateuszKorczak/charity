@@ -166,9 +166,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // TODO: get data from inputs and show them in summary
 
-            form.querySelector("#summaryInstitution").innerText = +" " +
+            form.querySelector("#summaryInstitution").innerText =
                 form.querySelector("[name=institution]:checked").parentElement.querySelector("div.title").innerText;
 
+            // dodaj pustą listę, dodaj zaznaczone kategorie,(parent element, jego descrpiton) wyświetli listę.
+            const categoryList = form.querySelectorAll("[name=categoryList]:checked.parentElement.description");
+
+            let checkedCategories = [];
+            categoryList.forEach(categoryList => {
+                checkedCategories.push(categoryList.innerText);
+            });
+            form.querySelector("#summaryCategories").innerText = "w których są: " + checkedCategories.join(", ");
             form.querySelector("#summaryQuantity").innerText = form.querySelector("#quantity").value;
             form.querySelector("#summaryStreet").innerText = form.querySelector("#street").value;
             form.querySelector("#summaryCity").innerText = form.querySelector("#city").value;

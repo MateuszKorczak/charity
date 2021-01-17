@@ -33,7 +33,7 @@ public class Donation {
 
     private String city;
 
-    @Pattern(regexp = "dd-ddd")
+    @Pattern(regexp = "\\d{2}-\\d{3}")
     private String zipCode;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")

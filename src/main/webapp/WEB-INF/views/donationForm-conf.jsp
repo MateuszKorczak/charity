@@ -23,11 +23,15 @@
         </ul>
     </nav>
 
+<%--    dodaj if (jeśli poprawnie podziękowanie) w irazie błędów listę błędów.--%>
     <div class="slogan container container--90">
         <h2>
             Dziękujemy za przesłanie formularza Na maila prześlemy wszelkie
             informacje o odbiorze.
         </h2>
     </div>
+
+
+
 </header>
 <%@include file="footer.jsp" %>

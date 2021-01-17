@@ -2,12 +2,16 @@ package pl.coderslab.charity.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.coderslab.charity.entity.Donation;
 import pl.coderslab.charity.services.interfaces.CategoryService;
 import pl.coderslab.charity.services.interfaces.DonationService;
 import pl.coderslab.charity.services.interfaces.InstitutionService;
+
+import javax.validation.Valid;
+
 
 @Controller
 //@RequestMapping("/donation")
@@ -32,9 +36,17 @@ public class DonationController {
     }
 
     @PostMapping("/form")
-    public String proceedForm(Donation donation) {
-        donationService.saveDonation(donation);
+    public String proceedForm(@Valid Donation donation, BindingResult bindingResult) {
+//        napisz validację przed zapisaniem do bazy
+// sprawdź instytucje/ kategorie
+        if (!bindingResult.hasErrors()){
+            donationService.saveDonation(donation);
+
+        }
+//
+
         return "donationForm-conf";
+
     }
 
 
