@@ -171,12 +171,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 form.querySelector("#summaryInstitution").innerText =
                     form.querySelector("[name=institution]:checked").parentElement.querySelector("div.title").innerText;
 
-                const categoryList = form.querySelectorAll("[name=categoryList]:checked.parentElement.description");
 
+
+                const categoryList = form.querySelectorAll("[name=categoryList]:checked");
                 let checkedCategories = [];
-                categoryList.forEach(categoryList => {
-                    checkedCategories.push(categoryList.innerText);
+                categoryList.forEach(category => {
+                    let description = category.parentElement.querySelector(".description");
+                    checkedCategories.push(description.innerText);
                 });
+
                 form.querySelector("#summaryCategories").innerText = "w których są: " + checkedCategories.join(", ");
                 form.querySelector("#summaryQuantity").innerText = form.querySelector("#quantity").value;
                 form.querySelector("#summaryStreet").innerText = form.querySelector("#street").value;

@@ -34,9 +34,9 @@
                     <div class="form-group form-group--checkbox"><label>
                         <form:checkbox path="categoryList" value="${category.id}"/> <span
                             class="checkbox"></span> <span class="description">${category.name}</span> </label></div>
-                    <%--                     czy wymagany i działa --%>
-                    <form:errors path="categoryList" cssClass="error"/>
+
                 </c:forEach>
+                <form:errors path="categoryList" cssClass="error"/>
                 <div class="form-group form-group--buttons">
                     <button type="button" class="btn next-step">Dalej</button>
                 </div>
@@ -69,6 +69,7 @@
                     </label>
                     </div>
                 </c:forEach>
+                <form:errors path="institution" cssClass="error"/>
                 <div class="form-group form-group--buttons">
                     <button type="button" class="btn prev-step">Wstecz</button>
                     <button type="button" class="btn next-step">Dalej</button>
@@ -93,8 +94,10 @@
                     <div class="form-section--column"><h4>Termin odbioru</h4>
                         <div class="form-group form-group--inline"><form:label path="pickUpDate">Data</form:label>
                             <form:input type="date" path="pickUpDate"/></div>
+                        <form:errors path="pickUpDate" cssClass="error"/>
                         <div class="form-group form-group--inline"><form:label path="pickUpTime">Godzina</form:label>
                             <form:input type="time" path="pickUpTime"/></div>
+                        <form:errors path="pickUpTime" cssClass="error"/>
                         <div class="form-group form-group--inline"><form:label
                                 path="pickUpComment">Uwagi dla kuriera</form:label> <form:input
                                 path="pickUpComment"/></div>

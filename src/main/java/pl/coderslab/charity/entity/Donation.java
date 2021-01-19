@@ -3,9 +3,7 @@ package pl.coderslab.charity.entity;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
+import javax.validation.constraints.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -19,13 +17,16 @@ public class Donation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull
     @Min(value = 1, message = "Minimum quantity is 1.")
     private Integer quantity;
 
+    @NotEmpty
     @ManyToMany
     @JoinTable(name = "donation_categories", joinColumns = @JoinColumn(name = "donation_id"), inverseJoinColumns = @JoinColumn(name = "category_id"))
     private List<Category> categoryList = new ArrayList<>();
 
+    @NotNull
     @ManyToOne
     @JoinColumn(name = "institution_id")
     private Institution institution;
@@ -38,12 +39,15 @@ public class Donation {
     @Pattern(regexp = "([A-ZŻŹĆĄŚĘŁÓŃ]*[a-zżźćńółęąś\\s-]+){1,2}", message = "Add City")
     private String city;
 
+    @NotBlank
     @Pattern(regexp = "\\d{2}-\\d{3}", message = "Add zipCode in format 11-111")
     private String zipCode;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @NotNull
     private LocalDate pickUpDate;
 
+    @NotNull
     private LocalTime pickUpTime;
 
     private String pickUpComment;

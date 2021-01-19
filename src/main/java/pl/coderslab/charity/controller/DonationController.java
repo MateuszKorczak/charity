@@ -3,14 +3,18 @@ package pl.coderslab.charity.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import pl.coderslab.charity.entity.Category;
 import pl.coderslab.charity.entity.Donation;
+import pl.coderslab.charity.entity.Institution;
 import pl.coderslab.charity.services.interfaces.CategoryService;
 import pl.coderslab.charity.services.interfaces.DonationService;
 import pl.coderslab.charity.services.interfaces.InstitutionService;
 
 import javax.validation.Valid;
+import java.util.List;
 
 
 @Controller
@@ -26,10 +30,18 @@ public class DonationController {
         this.donationService = donationService;
     }
 
+    @ModelAttribute("categories")
+    public List<Category> categories() {
+        return categoryService.findAllCategories();
+    }
+
+    @ModelAttribute("institutions")
+    public List<Institution> institutions() {
+        return institutionService.findAllInstitutions();
+    }
+
     @RequestMapping("/form")
     public String form(Model model) {
-        model.addAttribute("categories", categoryService.findAllCategories());
-        model.addAttribute("institutions", institutionService.findAllInstitutions());
         model.addAttribute("donation", new Donation());
         return "donationForm";
     }
