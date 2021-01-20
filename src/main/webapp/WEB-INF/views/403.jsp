@@ -21,21 +21,11 @@
 </header>
 
 <section class="login-page">
-    <h2>Zaloguj się</h2>
-    <form>
-        <div class="form-group">
-            <input type="email" name="email" placeholder="Email"/>
-        </div>
-        <div class="form-group">
-            <input type="password" name="password" placeholder="Hasło"/>
-            <a href="#" class="btn btn--small btn--without-border reset-password">Przypomnij hasło</a>
-        </div>
+    <div class="slogan container container--90">
+        <div class="slogan--item"><h1>Nie masz uprawnień do tej sekcji</h1></div>
+    </div>
+    <a href="index" class="btn btn--without-border">Wróć na stronę główną</a>
 
-        <div class="form-group form-group--buttons">
-            <a href="#" class="btn btn--without-border">Załóż konto</a>
-            <button class="btn" type="submit">Zaloguj się</button>
-        </div>
-    </form>
 </section>
 
 <%@include file="footer.jsp" %>

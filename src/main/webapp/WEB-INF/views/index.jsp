@@ -2,6 +2,12 @@
 
 <%@include file="head.jsp" %>
 <%@include file="header.jsp" %>
+<%--usuń jesli zacznie krzaczyć--%>
+<div class="slogan container container--90">
+    <div class="slogan--item"><h1> Zacznij pomagać!<br/>
+        Oddaj niechciane rzeczy w zaufane ręce </h1></div>
+</div>
+<%--usuń jesli zacznie krzaczyć--%>
 
 <section class="stats">
     <div class="container container--85">
