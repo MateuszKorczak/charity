@@ -2,6 +2,7 @@
 
 <%@include file="head.jsp" %>
 <%@include file="header.jsp" %>
+
 <section class="stats">
     <div class="container container--85">
         <div class="stats--item">
@@ -98,5 +99,6 @@
     </div>
 
 </section>
+
 <%@include file="footer.jsp" %>
 
